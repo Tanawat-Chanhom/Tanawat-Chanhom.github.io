@@ -12,13 +12,12 @@
       }
 
       button {
-        width: fit-content;
-        height: 50px;
+        height: 10vh;
       }
 
       button p {
         font-weight: bold;
-        font-size: 14px;
+        font-size: 1rem;
       }
     </style>
   </head>
@@ -26,16 +25,10 @@
     <h1>Button</h1>
     <div class="buttons">
       <button type="button" onclick="fourglecommunity()">
-        <p>fourglecommunity.com</p>
+        <h3>fourglecommunity.com</h3>
       </button>
       <button type="button" onclick="fourglecommunityWithDeeplink()">
-        <p>fourglecommunity.com/deeplink/12345</p>
-      </button>
-      <button type="button" onclick="fourglecommunityIOS()">
-        <p>[iOS] fourglecommunity.com</p>
-      </button>
-      <button type="button" onclick="fourglecommunityApplinksIOS()">
-        <p>[iOS] applinks fourglecommunity.com</p>
+        <h3>fourglecommunity.com/deeplink/12345</h3>
       </button>
     </div>
 
@@ -47,16 +40,6 @@
       }
       function fourglecommunityWithDeeplink() {
         const targetURL = `fca://fourglecommunity.com/deeplink/12345`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-      function fourglecommunityIOS() {
-        const targetURL = `https://fourglecommunity.com`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-      function fourglecommunityApplinksIOS() {
-        const targetURL = `applinks://fourglecommunity.com`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
