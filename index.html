@@ -31,8 +31,11 @@
       <button type="button" onclick="fourglecommunityWithDeeplink()">
         <p>fourglecommunity.com/deeplink/12345</p>
       </button>
-      <button type="button" onclick="fourglecommunityWithRegisterDeeplink()">
-        <p>fourglecommunity.com/deeplink/12345</p>
+      <button type="button" onclick="fourglecommunityIOS()">
+        <p>[iOS] fourglecommunity.com</p>
+      </button>
+      <button type="button" onclick="fourglecommunityApplinksIOS()">
+        <p>[iOS] applinks fourglecommunity.com</p>
       </button>
     </div>
 
@@ -47,8 +50,13 @@
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
-      function fourglecommunityWithRegisterDeeplink() {
-        const targetURL = `fca://fourglecommunity.com/register/deeplink/12345`;
+      function fourglecommunityIOS() {
+        const targetURL = `https://fourglecommunity.com`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+      function fourglecommunityApplinksIOS() {
+        const targetURL = `applinks://fourglecommunity.com`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
