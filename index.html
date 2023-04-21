@@ -1,1 +1,30 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Our Funky HTML Page</title>
+    <meta name="description" content="Our first page" />
+    <meta name="keywords" content="html tutorial template" />
+  </head>
+  <body>
+    <h1>Button</h1>
+    <button type="button" onclick="fourglecommunity()">
+      fourglecommunity.com
+    </button>
+    <button type="button" onclick="fourglecommunityWithDeeplink()">
+      fourglecommunity.com/deeplink/12345
+    </button>
+
+    <script>
+      function fourglecommunity() {
+        const targetURL = `fca://fourglecommunity.com`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+      function fourglecommunityWithDeeplink() {
+        const targetURL = `fca://fourglecommunity.com/deeplink/12345`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+    </script>
+  </body>
+</html>
