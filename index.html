@@ -4,15 +4,34 @@
     <title>Our Funky HTML Page</title>
     <meta name="description" content="Our first page" />
     <meta name="keywords" content="html tutorial template" />
+    <style type="text/css">
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      button {
+        width: fit-content;
+        height: 50px;
+      }
+
+      button p {
+        font-weight: bold;
+        font-size: 14px;
+      }
+    </style>
   </head>
   <body>
     <h1>Button</h1>
-    <button type="button" onclick="fourglecommunity()">
-      fourglecommunity.com
-    </button>
-    <button type="button" onclick="fourglecommunityWithDeeplink()">
-      fourglecommunity.com/deeplink/12345
-    </button>
+    <div class="buttons">
+      <button type="button" onclick="fourglecommunity()">
+        <p>fourglecommunity.com</p>
+      </button>
+      <button type="button" onclick="fourglecommunityWithDeeplink()">
+        <p>fourglecommunity.com/deeplink/12345</p>
+      </button>
+    </div>
 
     <script>
       function fourglecommunity() {
