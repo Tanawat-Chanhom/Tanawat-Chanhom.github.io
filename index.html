@@ -31,6 +31,9 @@
       <button type="button" onclick="fourglecommunityWithDeeplink()">
         <p>fourglecommunity.com/deeplink/12345</p>
       </button>
+      <button type="button" onclick="fourglecommunityWithRegisterDeeplink()">
+        <p>fourglecommunity.com/deeplink/12345</p>
+      </button>
     </div>
 
     <script>
@@ -41,6 +44,11 @@
       }
       function fourglecommunityWithDeeplink() {
         const targetURL = `fca://fourglecommunity.com/deeplink/12345`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+      function fourglecommunityWithRegisterDeeplink() {
+        const targetURL = `fca://fourglecommunity.com/register/deeplink/12345`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
