@@ -21,38 +21,23 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
-      <button type="button" onclick="fourglecommunity()">
-        [Android] fourglecommunity.com
+      <button type="button" onclick="fourglecommunityWithDeeplink('board', 'id-1', '')">
+        fourglecommunity.com/board/id-1
       </button>
-      <button type="button" onclick="fourglecommunityWithDeeplink()">
-        [Android] fourglecommunity.com/deeplink/12345
+      <button type="button" onclick="fourglecommunityWithDeeplink('event', 'id-1', '?event-type=ticket')">
+        fourglecommunity.com/event/id-1?event-type=ticket
       </button>
-      <button type="button" onclick="fourglecommunityIOS()">
-        [iOS] tanawat-chanhom.github.io
+      <button type="button" onclick="fourglecommunityWithDeeplink('product', 'id-1', '')">
+        fourglecommunity.com/product/id-1
       </button>
-      <button type="button" onclick="fourglecommunityWithDeeplinkIOS()">
-        [iOS] tanawat-chanhom.github.io/deeplink/12345
+      <button type="button" onclick="fourglecommunityWithDeeplink('community', 'id-1', '')">
+        fourglecommunity.com/community/id-1
       </button>
     </div>
 
     <script>
-      function fourglecommunity() {
-        const targetURL = `fca://fourglecommunity.com`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-      function fourglecommunityWithDeeplink() {
-        const targetURL = `fca://fourglecommunity.com/deeplink/12345`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-      function fourglecommunityIOS() {
-        const targetURL = `fca://tanawat-chanhom.github.io`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-      function fourglecommunityWithDeeplinkIOS() {
-        const targetURL = `fca://tanawat-chanhom.github.io/deeplink/12345`;
+      function fourglecommunityWithDeeplink(path, id, qeary) {
+        const targetURL = `fca://fourglecommunity.com/${path}/${id}${qeary}`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
