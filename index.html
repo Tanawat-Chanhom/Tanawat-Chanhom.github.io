@@ -21,23 +21,44 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
-      <button type="button" onclick="fourglecommunityWithDeeplink('board', 'id-1', '')">
+      <button
+        type="button"
+        onclick="fourglecommunityWithDeeplink('board', 'id-1', '')"
+      >
         fourglecommunity.com/board/id-1
       </button>
-      <button type="button" onclick="fourglecommunityWithDeeplink('event', 'id-1', '?event-type=ticket')">
+      <button
+        type="button"
+        onclick="fourglecommunityWithDeeplink('event', 'id-1', '?event-type=ticket')"
+      >
         fourglecommunity.com/event/id-1?event-type=ticket
       </button>
-      <button type="button" onclick="fourglecommunityWithDeeplink('product', 'id-1', '')">
+      <button
+        type="button"
+        onclick="fourglecommunityWithDeeplink('product', 'id-1', '')"
+      >
         fourglecommunity.com/product/id-1
       </button>
-      <button type="button" onclick="fourglecommunityWithDeeplink('community', 'id-1', '')">
+      <button
+        type="button"
+        onclick="fourglecommunityWithDeeplink('community', 'id-1', '')"
+      >
         fourglecommunity.com/community/id-1
+      </button>
+      <button type="button" onclick="checkEmail()">
+        check-email(test@email.com)
       </button>
     </div>
 
     <script>
       function fourglecommunityWithDeeplink(path, id, qeary) {
         const targetURL = `fca://fourglecommunity.com/${path}/${id}${qeary}`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+
+      function checkEmail() {
+        const targetURL = `fca://fourglecommunity.com/check-email?email=test@email.com`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
