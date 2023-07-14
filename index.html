@@ -45,8 +45,11 @@
       >
         fourglecommunity.com/community/id-1
       </button>
-      <button type="button" onclick="checkEmail()">
-        check-email(test@email.com)
+      <button type="button" onclick="checkEmail('12345')">
+        check-email(test@email.com)(12345)
+      </button>
+      <button type="button" onclick="checkEmail('54321')">
+        check-email(test@email.com)(54321)
       </button>
     </div>
 
@@ -57,8 +60,8 @@
         win?.focus();
       }
 
-      function checkEmail() {
-        const targetURL = `fca://fourglecommunity.com/check-email?email=test@email.com&check-num=12345`;
+      function checkEmail(num) {
+        const targetURL = `fca://fourglecommunity.com/check-email?email=test@email.com&check-num=${num}`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
