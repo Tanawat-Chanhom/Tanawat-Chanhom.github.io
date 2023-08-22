@@ -5,6 +5,10 @@
       {
         "appID": "URFVJ42BU2.com.example.fourgleCommunityApp",
         "paths": ["*"]
+      },
+      {
+        "appID": "URFVJ42BU2.com.fcax.community.dev",
+        "paths": ["*"]
       }
     ]
   }
