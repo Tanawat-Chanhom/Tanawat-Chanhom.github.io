@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fcax.community.dev",
+      "sha256_cert_fingerprints": [
+        "6D:49:1E:80:C0:CD:EE:85:1F:39:D9:73:E3:01:3D:A2:BB:CF:20:F0:5B:12:EE:55:72:2D:5E:5C:77:95:92:B6"
+      ]
+    }
+  }
+]
