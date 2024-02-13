@@ -1,0 +1,31 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "URFVJ42BU2.com.example.fourgleCommunityApp",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "URFVJ42BU2.com.fcax.community.dev",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "2B8226XK55.com.fourgle.community.qa",
+        "paths": [
+          "*"
+        ]
+      },
+      {
+        "appID": "URFVJ42BU2.com.fourgle.community.qa",
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
