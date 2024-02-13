@@ -1,41 +1,17 @@
 {
   "applinks": {
-    "apps": [],
     "details": [
       {
-        "appID": "URFVJ42BU2.com.fcax.community.dev",
-        "paths": [
-          "*"
-        ]
-      },
-      {
-        "appID": "URFVJ42BU2.com.fourgle.community.dev",
-        "paths": [
-          "*"
-        ]
-      },
-      {
-        "appID": "URFVJ42BU2.com.fourgle.community.qa",
-        "paths": [
-          "*"
-        ]
-      },
-      {
-        "appID": "2B8226XK55.com.fcax.community.dev",
-        "paths": [
-          "*"
-        ]
-      },
-      {
-        "appID": "2B8226XK55.com.fourgle.community.dev",
-        "paths": [
-          "*"
-        ]
-      },
-      {
-        "appID": "2B8226XK55.com.fourgle.community.qa",
-        "paths": [
-          "*"
+        "appIDs": [
+          "2B8226XK55.com.fourgle.community.dev",
+          "URFVJ42BU2.com.fourgle.community.dev",
+          "2B8226XK55.com.fourgle.community.qa",
+          "URFVJ42BU2.com.fourgle.community.qa"
+        ],
+        "components": [
+          {
+            "/": "*"
+          }
         ]
       }
     ]
