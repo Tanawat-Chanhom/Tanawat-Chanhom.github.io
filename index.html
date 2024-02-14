@@ -11,7 +11,7 @@
     <meta property="al:ios:app_store_id" content="1611717797" />
     <meta property="al:ios:app_name" content="FCA(dev)" />
 
-    <!-- Others -->
+    <!-- iOS: Meta Header -->
     <meta name="description" content="Our first page" />
     <meta name="keywords" content="html tutorial template" />
     <style type="text/css">
@@ -31,6 +31,7 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
+      <button type="button" onclick="openGithubIO('')">GithubIO</button>
       <button
         type="button"
         onclick="fourglecommunityWithDeeplink('profile', 'bDUxVGF5RzJWZ2Z6ajgwZ3ZhYVBySERaS2lCMg', '')"
@@ -77,13 +78,19 @@
 
     <script>
       function fourglecommunityWithDeeplink(path, id, qeary) {
-        const targetURL = `https://tanawat-chanhom.github.io/`;
+        const targetURL = `fca://fourglecommunity.com/${path}/${id}${qeary}`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
 
       function checkEmail(num) {
         const targetURL = `fca://fourglecommunity.com/check-email?email=test@email.com&check-num=${num}`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+
+      function openGithubIO(path) {
+        const targetURL = `https://tanawat-chanhom.github.io/${path}`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
