@@ -24,6 +24,9 @@
           "G64YQMBMUA.com.sikarin.platform.qa"
           "G64YQMBMUA.com.sikarin.platform.dev"
         ],
+        "paths": [
+          "*"
+        ],
         "components": [
           {
             "/": "/*"
