@@ -1,40 +1,28 @@
 {
   "activitycontinuation": {
     "apps": [
-      "URFVJ42BU2.com.fcax.community.qa",
-      "URFVJ42BU2.com.fcax.community.dev",
-      "2B8226XK55.com.fcax.community.qa",
-      "2B8226XK55.com.fcax.community.dev",
-      "URFVJ42BU2.com.fourgle.community.dev",
-      "URFVJ42BU2.com.fourgle.community.qa",
-      "2B8226XK55.com.fourgle.community.dev",
-      "2B8226XK55.com.fourgle.community.qa"
+      "G64YQMBMUA.com.sikarin.platform"
+      "G64YQMBMUA.com.sikarin.platform.uat"
+      "G64YQMBMUA.com.sikarin.platform.qa"
+      "G64YQMBMUA.com.sikarin.platform.dev"
     ]
   },
   "webcredentials": {
     "apps": [
-      "URFVJ42BU2.com.fcax.community.qa",
-      "URFVJ42BU2.com.fcax.community.dev",
-      "2B8226XK55.com.fcax.community.qa",
-      "2B8226XK55.com.fcax.community.dev",
-      "URFVJ42BU2.com.fourgle.community.dev",
-      "URFVJ42BU2.com.fourgle.community.qa",
-      "2B8226XK55.com.fourgle.community.dev",
-      "2B8226XK55.com.fourgle.community.qa"
+      "G64YQMBMUA.com.sikarin.platform"
+      "G64YQMBMUA.com.sikarin.platform.uat"
+      "G64YQMBMUA.com.sikarin.platform.qa"
+      "G64YQMBMUA.com.sikarin.platform.dev"
     ]
   },
   "applinks": {
     "details": [
       {
         "appIDs": [
-          "URFVJ42BU2.com.fcax.community.qa",
-          "URFVJ42BU2.com.fcax.community.dev",
-          "2B8226XK55.com.fcax.community.qa",
-          "2B8226XK55.com.fcax.community.dev",
-          "URFVJ42BU2.com.fourgle.community.dev",
-          "URFVJ42BU2.com.fourgle.community.qa",
-          "2B8226XK55.com.fourgle.community.dev",
-          "2B8226XK55.com.fourgle.community.qa"
+          "G64YQMBMUA.com.sikarin.platform"
+          "G64YQMBMUA.com.sikarin.platform.uat"
+          "G64YQMBMUA.com.sikarin.platform.qa"
+          "G64YQMBMUA.com.sikarin.platform.dev"
         ],
         "components": [
           {
