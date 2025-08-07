@@ -3,9 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.fcax.community.dev",
+      "package_name": "com.sikarin.platform.uat",
       "sha256_cert_fingerprints": [
-        "6D:49:1E:80:C0:CD:EE:85:1F:39:D9:73:E3:01:3D:A2:BB:CF:20:F0:5B:12:EE:55:72:2D:5E:5C:77:95:92:B6"
+        "30:3B:B6:CA:97:9F:72:47:82:B8:01:EB:FA:02:0E:09:6D:DC:7E:71:28:8C:C3:22:43:22:1A:61:C6:43:B1:22"
       ]
     }
   },
@@ -13,9 +13,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.fcax.community.dev",
+      "package_name": "com.sikarin.platform.uat",
       "sha256_cert_fingerprints": [
-        "27:EB:31:B3:40:D7:55:A3:99:55:52:F7:83:34:CC:3A:E9:FC:F8:23:A3:52:80:BD:0E:66:CC:95:DC:CD:06:46"
+        "30:3B:B6:CA:97:9F:72:47:82:B8:01:EB:FA:02:0E:09:6D:DC:7E:71:28:8C:C3:22:43:22:1A:61:C6:43:B1:22"
       ]
     }
   }

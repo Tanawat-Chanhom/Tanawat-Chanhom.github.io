@@ -3,6 +3,7 @@
     "apps": [
       "G64YQMBMUA.com.sikarin.platform"
       "G64YQMBMUA.com.sikarin.platform.uat"
+      "G64YQMBMUA.com.sikarin.platform.sandbox"
       "G64YQMBMUA.com.sikarin.platform.qa"
       "G64YQMBMUA.com.sikarin.platform.dev"
     ]
@@ -11,6 +12,7 @@
     "apps": [
       "G64YQMBMUA.com.sikarin.platform"
       "G64YQMBMUA.com.sikarin.platform.uat"
+      "G64YQMBMUA.com.sikarin.platform.sandbox"
       "G64YQMBMUA.com.sikarin.platform.qa"
       "G64YQMBMUA.com.sikarin.platform.dev"
     ]
@@ -21,6 +23,7 @@
         "appIDs": [
           "G64YQMBMUA.com.sikarin.platform"
           "G64YQMBMUA.com.sikarin.platform.uat"
+          "G64YQMBMUA.com.sikarin.platform.sandbox"
           "G64YQMBMUA.com.sikarin.platform.qa"
           "G64YQMBMUA.com.sikarin.platform.dev"
         ],
