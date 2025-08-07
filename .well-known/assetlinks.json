@@ -13,9 +13,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.sikarin.platform.uat",
+      "package_name": "com.sikarin.platform.sandbox",
       "sha256_cert_fingerprints": [
-        "30:3B:B6:CA:97:9F:72:47:82:B8:01:EB:FA:02:0E:09:6D:DC:7E:71:28:8C:C3:22:43:22:1A:61:C6:43:B1:22"
+        "FF:DA:BD:5C:24:A0:C5:88:75:07:20:8C:2D:C4:9C:66:E1:94:7F:34:73:CF:3A:FC:5A:7F:CF:FE:08:C3:EE:6F"
       ]
     }
   }
