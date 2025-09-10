@@ -31,14 +31,23 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
-      <button type="button" onclick="deeplink()">
+      <button type="button" onclick="deeplinkMedia1()">
         skr://tanawat-chanhom.github.io/media/1
+      </button>
+
+      <button type="button" onclick="deeplinkMedia2()">
+        https://tanawat-chanhom.github.io/media/1
       </button>
     </div>
 
     <script>
-      function deeplink() {
+      function deeplink1() {
         const targetURL = `skr://tanawat-chanhom.github.io/media/1`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+      function deeplink2() {
+        const targetURL = `https://tanawat-chanhom.github.io/media/1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
