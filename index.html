@@ -43,6 +43,10 @@
         skr://tanawat-chanhom.github.io/sikarin-app/media/1
       </button>
 
+      <button type="button" onclick="deeplink()">
+        https://tanawat-chanhom.github.io
+      </button>
+
       <button type="button" onclick="deeplinkMedia()">
         https://tanawat-chanhom.github.io/sikarin-app/media/1
       </button>
@@ -61,6 +65,12 @@
       }
       function deeplinkMediaProd() {
         const targetURL = `skr://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+
+      function deeplink() {
+        const targetURL = `https://tanawat-chanhom.github.io`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
