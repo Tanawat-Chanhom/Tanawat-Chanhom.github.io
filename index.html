@@ -31,23 +31,42 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
-      <button type="button" onclick="deeplinkMedia1()">
-        skr-dev://tanawat-chanhom.github.io/media/1
+      <button type="button" onclick="deeplinkMediaDev()">
+        skr-dev://tanawat-chanhom.github.io/sikarin-app/media/1
       </button>
 
-      <button type="button" onclick="deeplinkMedia2()">
-        https://tanawat-chanhom.github.io/media/1
+      <button type="button" onclick="deeplinkMediaUat()">
+        skr-uat://tanawat-chanhom.github.io/sikarin-app/media/1
+      </button>
+
+      <button type="button" onclick="deeplinkMediaProd()">
+        skr://tanawat-chanhom.github.io/sikarin-app/media/1
+      </button>
+
+      <button type="button" onclick="deeplinkMedia()">
+        https://tanawat-chanhom.github.io/sikarin-app/media/1
       </button>
     </div>
 
     <script>
-      function deeplinkMedia1() {
-        const targetURL = `skr-dev://tanawat-chanhom.github.io/media/1`;
+      function deeplinkMediaDev() {
+        const targetURL = `skr-dev://tanawat-chanhom.github.io/sikarin-app/media/1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
-      function deeplinkMedia2() {
-        const targetURL = `https://tanawat-chanhom.github.io/media/1`;
+      function deeplinkMediaUat() {
+        const targetURL = `skr-uat://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+      function deeplinkMediaProd() {
+        const targetURL = `skr://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+
+      function deeplinkMedia() {
+        const targetURL = `https://tanawat-chanhom.github.io/sikarin-app/media/1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
