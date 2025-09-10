@@ -31,66 +31,14 @@
   <body>
     <h1>Button</h1>
     <div class="buttons">
-      <button type="button" onclick="openGithubIO('')">google</button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('profile', 'bDUxVGF5RzJWZ2Z6ajgwZ3ZhYVBySERaS2lCMg', '')"
-      >
-        fourglecommunity.com/profile/65c0802ac6996a22f0df7e51
-      </button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('discussion', '65c0802ac6996a22f0df7e51', '')"
-      >
-        fourglecommunity.com/discussion/65c0802ac6996a22f0df7e51
-      </button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('board', 'id-1', '')"
-      >
-        fourglecommunity.com/board/id-1
-      </button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('event', 'id-1', '?event-type=ticket')"
-      >
-        fourglecommunity.com/event/id-1?event-type=ticket
-      </button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('product', 'id-1', '')"
-      >
-        fourglecommunity.com/product/id-1
-      </button>
-      <button
-        type="button"
-        onclick="fourglecommunityWithDeeplink('community', 'id-1', '')"
-      >
-        fourglecommunity.com/community/id-1
-      </button>
-      <button type="button" onclick="checkEmail('12345')">
-        check-email(test@email.com)(12345)
-      </button>
-      <button type="button" onclick="checkEmail('54321')">
-        check-email(test@email.com)(54321)
+      <button type="button" onclick="deeplink()">
+        skr://tanawat-chanhom.github.io/media/1
       </button>
     </div>
 
     <script>
-      function fourglecommunityWithDeeplink(path, id, qeary) {
-        const targetURL = `fca://fourglecommunity.com/${path}/${id}${qeary}`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-
-      function checkEmail(num) {
-        const targetURL = `fca://fourglecommunity.com/check-email?email=test@email.com&check-num=${num}`;
-        const win = window.open(targetURL, "_self");
-        win?.focus();
-      }
-
-      function openGithubIO(path) {
-        const targetURL = `fca://google.com/${path}`;
+      function deeplink() {
+        const targetURL = `skr://tanawat-chanhom.github.io/media/1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
