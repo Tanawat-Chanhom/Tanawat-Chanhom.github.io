@@ -34,6 +34,9 @@
       <button type="button" onclick="deeplinkMediaDev()">
         skr-dev://tanawat-chanhom.github.io/sikarin-app/media?id=1
       </button>
+      <button type="button" onclick="deeplinkProductDev()">
+        skr-dev://tanawat-chanhom.github.io/sikarin-app/product?id=1
+      </button>
 
       <button type="button" onclick="deeplinkMediaUat()">
         skr-uat://tanawat-chanhom.github.io/sikarin-app/media?id=1
@@ -58,6 +61,12 @@
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
+      function deeplinkProductDev() {
+        const targetURL = `skr-dev://tanawat-chanhom.github.io/sikarin-app/product?id=1`;
+        const win = window.open(targetURL, "_self");
+        win?.focus();
+      }
+
       function deeplinkMediaUat() {
         const targetURL = `skr-uat://tanawat-chanhom.github.io/sikarin-app/media?id=1`;
         const win = window.open(targetURL, "_self");
