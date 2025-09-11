@@ -614,9 +614,8 @@
     <script>
       // กำหนด deep link URL สำหรับแต่ละแพลตฟอร์ม
       const DEEP_LINKS = {
-        ios: "hospital-app://", // URL scheme สำหรับ iOS
-        android:
-          "intent://hospital#Intent;scheme=hospital-app;package=com.hospital.app;end;", // Intent URL สำหรับ Android
+        ios: "skr-uat://" + window.location.toString().replace("https://", ""), // URL scheme สำหรับ iOS
+        android: "skr-uat://" + window.location.toString().replace("https://", ""), // Intent URL สำหรับ Android
         fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
       };
 
