@@ -18,5 +18,14 @@
         "FF:DA:BD:5C:24:A0:C5:88:75:07:20:8C:2D:C4:9C:66:E1:94:7F:34:73:CF:3A:FC:5A:7F:CF:FE:08:C3:EE:6F"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sikarin.platform",
+      "sha256_cert_fingerprints":
+        ["5A:D7:CA:17:42:D3:04:D9:17:FE:21:0C:C8:07:73:F9:5B:00:70:A2:12:0F:1B:D6:55:02:87:C4:F3:79:EF:7C"]
+    }
   }
 ]
