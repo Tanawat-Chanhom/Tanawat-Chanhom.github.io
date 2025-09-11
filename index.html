@@ -32,15 +32,15 @@
     <h1>Button</h1>
     <div class="buttons">
       <button type="button" onclick="deeplinkMediaDev()">
-        skr-dev://tanawat-chanhom.github.io/sikarin-app/media/1
+        skr-dev://tanawat-chanhom.github.io/sikarin-app/media/?id=1
       </button>
 
       <button type="button" onclick="deeplinkMediaUat()">
-        skr-uat://tanawat-chanhom.github.io/sikarin-app/media/1
+        skr-uat://tanawat-chanhom.github.io/sikarin-app/media/?id=1
       </button>
 
       <button type="button" onclick="deeplinkMediaProd()">
-        skr://tanawat-chanhom.github.io/sikarin-app/media/1
+        skr://tanawat-chanhom.github.io/sikarin-app/media/?id=1
       </button>
 
       <button type="button" onclick="deeplink()">
@@ -48,23 +48,23 @@
       </button>
 
       <button type="button" onclick="deeplinkMedia()">
-        https://tanawat-chanhom.github.io/sikarin-app/media/1
+        https://tanawat-chanhom.github.io/sikarin-app/media/?id=1
       </button>
     </div>
 
     <script>
       function deeplinkMediaDev() {
-        const targetURL = `skr-dev://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const targetURL = `skr-dev://tanawat-chanhom.github.io/sikarin-app/media/?id=1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
       function deeplinkMediaUat() {
-        const targetURL = `skr-uat://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const targetURL = `skr-uat://tanawat-chanhom.github.io/sikarin-app/media/?id=1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
       function deeplinkMediaProd() {
-        const targetURL = `skr://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const targetURL = `skr://tanawat-chanhom.github.io/sikarin-app/media/?id=1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
@@ -76,7 +76,7 @@
       }
 
       function deeplinkMedia() {
-        const targetURL = `https://tanawat-chanhom.github.io/sikarin-app/media/1`;
+        const targetURL = `https://tanawat-chanhom.github.io/sikarin-app/media/?id=1`;
         const win = window.open(targetURL, "_self");
         win?.focus();
       }
