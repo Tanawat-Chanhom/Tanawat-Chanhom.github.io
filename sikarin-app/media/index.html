@@ -607,6 +607,8 @@
 
         function openApp() {
             const os = detectOS();
+            const isWebView = isInAppWebView();
+
             setButtonLoading(true);
             
             if (isWebView) {
