@@ -553,255 +553,133 @@
     </div>
 
     <script>
-        // // กำหนด deep link URL สำหรับแต่ละแพลตฟอร์ม
-        // const DEEP_LINKS = {
-        //     ios: "skr-dev://" + window.location.toString().replace("https://", ""), // URL scheme สำหรับ iOS
-        //     android: "skr-dev://" + window.location.toString().replace("https://", ""), // Intent URL สำหรับ Android
-        //     fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
-        // };
-
-        // function isInAppWebView() {
-        //     const ua = navigator.userAgent.toLowerCase();
-        //     return ua.includes("line") || ua.includes("fbav") || ua.includes("messenger") || ua.includes("instagram");
-        // }
-
-
-        // function detectOS() {
-        //     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            
-        //     if (/android/i.test(userAgent)) {
-        //         return 'android';
-        //     }
-            
-        //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        //         return 'ios';
-        //     }
-            
-        //     return 'desktop';
-        // }
-
-        // function showMessage(message, type = 'success') {
-        //     const statusDiv = document.getElementById('statusMessage');
-        //     statusDiv.textContent = message;
-        //     statusDiv.className = `status-message ${type} show`;
-            
-        //     setTimeout(() => {
-        //         statusDiv.classList.remove('show');
-        //     }, 5000);
-        // }
-
-        // function setButtonLoading(loading = false) {
-        //     const btn = document.getElementById('openAppBtn');
-        //     const btnText = document.getElementById('btnText');
-            
-        //     if (loading) {
-        //         btn.classList.add('btn-disabled');
-        //         btnText.innerHTML = '<div class="loading"></div>กำลังเปิดแอป...';
-        //         btn.disabled = true;
-        //     } else {
-        //         btn.classList.remove('btn-disabled');
-        //         btnText.textContent = 'เปิดแอปพลิเคชัน';
-        //         btn.disabled = false;
-        //     }
-        // }
-
-        // function openApp() {
-        //     const os = detectOS();
-        //     const isWebView = isInAppWebView();
-
-        //     setButtonLoading(true);
-            
-        //     if (isWebView) {
-        //         showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
-        //         const btn = document.getElementById("openAppBtn");
-        //         btn.innerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;">🔗 เปิดในเบราว์เซอร์</a>`;
-        //         setButtonLoading(false);
-        //         return;
-        //     }
-
-        //     if (os === 'desktop') {
-        //         showMessage('กรุณาใช้อุปกรณ์มือถือเพื่อเปิดแอปพลิเคชัน', 'error');
-        //         setButtonLoading(false);
-        //         return;
-        //     }
-            
-        //     const deepLink = DEEP_LINKS[os];
-        //     let appOpened = false;
-            
-        //     // สร้าง hidden iframe เพื่อพยายามเปิดแอป
-        //     const iframe = document.createElement('iframe');
-        //     iframe.style.display = 'none';
-        //     document.body.appendChild(iframe);
-            
-        //     // ตั้งเวลาเพื่อตรวจสอบว่าแอปเปิดหรือไม่
-        //     const startTime = Date.now();
-        //     const timeout = setTimeout(() => {
-        //         if (!appOpened && Date.now() - startTime < 3000) {
-        //             // ถ้าแอปไม่เปิดภายใน 3 วินาที แสดงข้อความแจ้งเตือน
-        //             showMessage('ไม่สามารถเปิดแอปได้ กรุณาติดต่อเจ้าหน้าที่', 'error');
-        //         }
-        //         setButtonLoading(false);
-        //         document.body.removeChild(iframe);
-        //     }, 3000);
-            
-        //     // Event listener สำหรับตรวจสอบการเปิดแอป
-        //     const handleVisibilityChange = () => {
-        //         if (document.hidden) {
-        //             appOpened = true;
-        //             showMessage('กำลังเปิดแอปพลิเคชัน...', 'success');
-        //             clearTimeout(timeout);
-        //             setButtonLoading(false);
-        //             document.removeEventListener('visibilitychange', handleVisibilityChange);
-        //         }
-        //     };
-            
-        //     document.addEventListener('visibilitychange', handleVisibilityChange);
-            
-        //     // พยายามเปิดแอป
-        //     try {
-        //         if (os === 'ios') {
-        //             window.location.href = deepLink;
-        //         } else if (os === 'android') {
-        //             iframe.src = deepLink;
-        //         }
-                
-        //         showMessage('กำลังพยายามเปิดแอปพลิเคชัน...', 'success');
-        //     } catch (error) {
-        //         console.error('Error opening app:', error);
-        //         showMessage('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
-        //         setButtonLoading(false);
-        //         clearTimeout(timeout);
-        //     }
-        // }
-
-        // // เพิ่ม event listener สำหรับ page focus
-        // window.addEventListener('focus', function() {
-        //     setButtonLoading(false);
-        // });
-
-        // // Auto-trigger เมื่อโหลดหน้าเว็บ (ถ้าต้องการ)
-        // // window.addEventListener('load', openApp);
-
-
         // กำหนด deep link URL สำหรับแต่ละแพลตฟอร์ม
-function getDeepLinks() {
-    const id = new URLSearchParams(window.location.search).get("id") || window.location.hash.replace("#","") || "";
-    return {
-        ios: `skr-dev://media?id=${id}`,        // URL scheme สำหรับ iOS
-        android: `skr-dev://media?id=${id}`,    // Intent URL สำหรับ Android
-        fallback: `https://tanawat-chanhom.github.io/sikarin-app/media?id=${id}` // URL สำรอง
-    };
-}
+        const DEEP_LINKS = {
+            ios: "skr-dev://" + window.location.toString().replace("https://", ""), // URL scheme สำหรับ iOS
+            android: "skr-dev://" + window.location.toString().replace("https://", ""), // Intent URL สำหรับ Android
+            fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
+        };
 
-function isInAppWebView() {
-    const ua = navigator.userAgent.toLowerCase();
-    return ua.includes("line") || ua.includes("fbav") || ua.includes("messenger") || ua.includes("instagram");
-}
-
-function detectOS() {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (/android/i.test(userAgent)) return 'android';
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) return 'ios';
-    return 'desktop';
-}
-
-function showMessage(message, type = 'success') {
-    const statusDiv = document.getElementById('statusMessage');
-    statusDiv.textContent = message;
-    statusDiv.className = `status-message ${type} show`;
-    
-    setTimeout(() => {
-        statusDiv.classList.remove('show');
-    }, 5000);
-}
-
-function setButtonLoading(loading = false) {
-    const btn = document.getElementById('openAppBtn');
-    const btnText = document.getElementById('btnText');
-    
-    if (loading) {
-        btn.classList.add('btn-disabled');
-        btnText.innerHTML = '<div class="loading"></div>กำลังเปิดแอป...';
-        btn.disabled = true;
-    } else {
-        btn.classList.remove('btn-disabled');
-        btnText.textContent = 'เปิดแอปพลิเคชัน';
-        btn.disabled = false;
-    }
-}
-
-function openApp() {
-    const os = detectOS();
-    const links = getDeepLinks();
-    const deepLink = links[os];
-    const fallback = links.fallback;
-    const isWebView = isInAppWebView();
-
-    setButtonLoading(true);
-
-    if (isWebView) {
-        // อยู่ใน LINE / Messenger / IG → แสดงปุ่ม fallback
-        showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
-        const btn = document.getElementById("openAppBtn");
-        btn.outerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;" class="open-app-btn">🔗 เปิดในเบราว์เซอร์</a>`;
-        setButtonLoading(false);
-        return;
-    }
-
-    if (os === 'desktop') {
-        showMessage('กรุณาใช้อุปกรณ์มือถือเพื่อเปิดแอปพลิเคชัน', 'error');
-        setButtonLoading(false);
-        return;
-    }
-
-    let appOpened = false;
-    
-    // สร้าง hidden iframe สำหรับ Android
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    document.body.appendChild(iframe);
-    
-    const startTime = Date.now();
-    const timeout = setTimeout(() => {
-        if (!appOpened && Date.now() - startTime < 3000) {
-            window.location.href = fallback; // ถ้าเปิดแอปไม่ได้ ให้ fallback
+        function isInAppWebView() {
+            const ua = navigator.userAgent.toLowerCase();
+            return ua.includes("line") || ua.includes("fbav") || ua.includes("messenger") || ua.includes("instagram");
         }
-        setButtonLoading(false);
-        document.body.removeChild(iframe);
-    }, 3000);
 
-    const handleVisibilityChange = () => {
-        if (document.hidden) {
-            appOpened = true;
-            showMessage('กำลังเปิดแอปพลิเคชัน...', 'success');
-            clearTimeout(timeout);
+        function detectOS() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            if (/android/i.test(userAgent)) {
+                return 'android';
+            }
+            
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                return 'ios';
+            }
+            
+            return 'desktop';
+        }
+
+        function showMessage(message, type = 'success') {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message ${type} show`;
+            
+            setTimeout(() => {
+                statusDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        function setButtonLoading(loading = false) {
+            const btn = document.getElementById('openAppBtn');
+            const btnText = document.getElementById('btnText');
+            
+            if (loading) {
+                btn.classList.add('btn-disabled');
+                btnText.innerHTML = '<div class="loading"></div>กำลังเปิดแอป...';
+                btn.disabled = true;
+            } else {
+                btn.classList.remove('btn-disabled');
+                btnText.textContent = 'เปิดแอปพลิเคชัน';
+                btn.disabled = false;
+            }
+        }
+
+        function openApp() {
+            const os = detectOS();
+            const isWebView = isInAppWebView();
+
+            setButtonLoading(true);
+            
+            if (isWebView) {
+                showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
+                const btn = document.getElementById("openAppBtn");
+                btn.innerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;">🔗 เปิดในเบราว์เซอร์</a>`;
+                setButtonLoading(false);
+                return;
+            }
+
+            if (os === 'desktop') {
+                showMessage('กรุณาใช้อุปกรณ์มือถือเพื่อเปิดแอปพลิเคชัน', 'error');
+                setButtonLoading(false);
+                return;
+            }
+            
+            const deepLink = DEEP_LINKS[os];
+            let appOpened = false;
+            
+            // สร้าง hidden iframe เพื่อพยายามเปิดแอป
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            // ตั้งเวลาเพื่อตรวจสอบว่าแอปเปิดหรือไม่
+            const startTime = Date.now();
+            const timeout = setTimeout(() => {
+                if (!appOpened && Date.now() - startTime < 3000) {
+                    // ถ้าแอปไม่เปิดภายใน 3 วินาที แสดงข้อความแจ้งเตือน
+                    showMessage('ไม่สามารถเปิดแอปได้ กรุณาติดต่อเจ้าหน้าที่', 'error');
+                }
+                setButtonLoading(false);
+                document.body.removeChild(iframe);
+            }, 3000);
+            
+            // Event listener สำหรับตรวจสอบการเปิดแอป
+            const handleVisibilityChange = () => {
+                if (document.hidden) {
+                    appOpened = true;
+                    showMessage('กำลังเปิดแอปพลิเคชัน...', 'success');
+                    clearTimeout(timeout);
+                    setButtonLoading(false);
+                    document.removeEventListener('visibilitychange', handleVisibilityChange);
+                }
+            };
+            
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+            
+            // พยายามเปิดแอป
+            try {
+                if (os === 'ios') {
+                    window.location.href = deepLink;
+                } else if (os === 'android') {
+                    iframe.src = deepLink;
+                }
+                
+                showMessage('กำลังพยายามเปิดแอปพลิเคชัน...', 'success');
+            } catch (error) {
+                console.error('Error opening app:', error);
+                showMessage('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
+                setButtonLoading(false);
+                clearTimeout(timeout);
+            }
+        }
+
+        // เพิ่ม event listener สำหรับ page focus
+        window.addEventListener('focus', function() {
             setButtonLoading(false);
-            document.removeEventListener('visibilitychange', handleVisibilityChange);
-        }
-    };
-    
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+        });
 
-    try {
-        if (os === 'ios') {
-            window.location.href = deepLink;
-        } else if (os === 'android') {
-            iframe.src = deepLink;
-        }
-        showMessage('กำลังพยายามเปิดแอปพลิเคชัน...', 'success');
-    } catch (error) {
-        console.error('Error opening app:', error);
-        showMessage('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
-        setButtonLoading(false);
-        clearTimeout(timeout);
-    }
-}
-
-// เพิ่ม event listener สำหรับ page focus
-window.addEventListener('focus', function() {
-    setButtonLoading(false);
-});
-
+        // Auto-trigger เมื่อโหลดหน้าเว็บ (ถ้าต้องการ)
+        // window.addEventListener('load', openApp);
     </script>
 </body>
 </html>
