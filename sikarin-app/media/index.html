@@ -560,6 +560,12 @@
             fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
         };
 
+        function isInAppWebView() {
+            const ua = navigator.userAgent.toLowerCase();
+            return ua.includes("line") || ua.includes("fbav") || ua.includes("messenger") || ua.includes("instagram");
+        }
+
+
         function detectOS() {
             const userAgent = navigator.userAgent || navigator.vendor || window.opera;
             
@@ -603,6 +609,14 @@
             const os = detectOS();
             setButtonLoading(true);
             
+            if (isWebView) {
+                showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
+                const btn = document.getElementById("openAppBtn");
+                btn.innerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;">🔗 เปิดในเบราว์เซอร์</a>`;
+                setButtonLoading(false);
+                return;
+            }
+
             if (os === 'desktop') {
                 showMessage('กรุณาใช้อุปกรณ์มือถือเพื่อเปิดแอปพลิเคชัน', 'error');
                 setButtonLoading(false);
