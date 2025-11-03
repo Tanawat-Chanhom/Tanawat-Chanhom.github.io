@@ -607,15 +607,20 @@
         function openApp() {
             const os = detectOS();
             const isWebView = isInAppWebView();
+            const fallback = window.location.toString();
 
             setButtonLoading(true);
             
             if (isWebView) {
-                showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
-                const btn = document.getElementById("openAppBtn");
-                btn.innerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;">🔗 เปิดในเบราว์เซอร์</a>`;
+                showMessage("กำลังเปิดในเบราว์เซอร์...", "success");
+                window.open(fallback, "_blank"); 
                 setButtonLoading(false);
                 return;
+                // showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
+                // const btn = document.getElementById("openAppBtn");
+                // btn.innerHTML = `<a href="${fallback}" target="_blank" style="color:white;text-decoration:none;">🔗 เปิดในเบราว์เซอร์</a>`;
+                // setButtonLoading(false);
+                // return;
             }
 
             if (os === 'desktop') {
