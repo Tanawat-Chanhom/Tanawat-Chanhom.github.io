@@ -606,12 +606,12 @@
 
         function openApp() {
             const os = detectOS();
-            const isWebView = isInAppWebView();
+            // const isWebView = isInAppWebView();
             const fallback = window.location.toString();
 
             setButtonLoading(true);
             
-            if (isWebView) {
+            if (isInAppWebView()) {
                 showMessage("กำลังเปิดในเบราว์เซอร์...", "success");
                 window.open(fallback, "_blank"); 
                 setButtonLoading(false);
