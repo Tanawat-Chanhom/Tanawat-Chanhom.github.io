@@ -539,10 +539,8 @@
             <p class="subtitle">กดปุ่มด้านล่างเพื่อเปิดแอปพลิเคชัน UAT-Sikarin</p>
 
             <div>
-                <p>check 2</p>
-                <a href="https://tanawat-chanhom.github.io/sikarin-app/media?id=104" target="_blank" rel="noopener noreferrer">
-                    open
-                </a>
+                <p>check 3</p>
+                 <a id="openBrowserBtn" class="btn btn-primary">เปิดในเบราว์เซอร์</a>
             </div>
             
             
@@ -617,6 +615,16 @@
             
             if (isInAppWebView()) {
                 showMessage('กรุณาเปิดในเบราว์เซอร์', 'error');
+
+                const modal = document.getElementById('webviewModal');
+                modal.style.display = 'flex';
+                
+                const openBtn = document.getElementById('openBrowserBtn');
+                openBtn.onclick = () => {
+                    // ต้องให้ user กดเองเพื่อเปิด browser
+                    window.location.href = window.location.toString();
+                }
+
                 setButtonLoading(false);
                 return;
             }
