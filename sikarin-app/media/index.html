@@ -557,7 +557,8 @@
         const DEEP_LINKS = {
             ios: "skr-dev://" + window.location.toString().replace("https://", ""), // URL scheme สำหรับ iOS
             android: "skr-dev://" + window.location.toString().replace("https://", ""), // Intent URL สำหรับ Android
-            fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
+            // fallback: "https://apps.apple.com/app/hospital-app", // URL สำรอง
+            fallback: window.location.toString(),
         };
         console.log(DEEP_LINKS)
 
