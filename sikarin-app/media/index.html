@@ -537,23 +537,6 @@
             </div>
             <h1>โรงพยาบาลศิครินทร์</h1>
             <p class="subtitle">กดปุ่มด้านล่างเพื่อเปิดแอปพลิเคชัน UAT-Sikarin</p>
-
-            <div>
-                <p>check 4</p>
-                 <a id="openBrowserBtn" class="btn btn-primary">เปิดในเบราว์เซอร์</a>
-            </div>
-
-            <div id="webviewModal">
-    <div class="modal-content">
-        <h2>เปิดในเบราว์เซอร์</h2>
-        <p>ลิงก์นี้ไม่สามารถเปิดในแอป LINE / Messenger / IG ได้ กรุณาเปิดใน Safari หรือ Chrome</p>
-        <button id="openBrowserBtn">🔗 เปิดในเบราว์เซอร์</button>
-        <button id="cancelBtn">❌ ยกเลิก</button>
-    </div>
-</div>
-
-            
-            
             
             <button id="openAppBtn" class="open-app-btn" onclick="openApp()">
                 <span id="btnText">เปิดแอปพลิเคชัน</span>
@@ -624,17 +607,7 @@
             setButtonLoading(true);
             
             if (isInAppWebView()) {
-                showMessage('กรุณาเปิดในเบราว์เซอร์', 'error');
-
-                const modal = document.getElementById('webviewModal');
-                modal.style.display = 'flex';
-                
-                const openBtn = document.getElementById('openBrowserBtn');
-                openBtn.onclick = () => {
-                    // ต้องให้ user กดเองเพื่อเปิด browser
-                    window.location.href = window.location.toString();
-                }
-
+                showMessage('ไม่สามารถเปิดแอปได้ กรุณาเปิดลิงค์ในเบราว์เซอร์ของคุณ', 'error');
                 setButtonLoading(false);
                 return;
             }
