@@ -612,7 +612,12 @@
             
             if (isInAppWebView()) {
                 showMessage('กรุณาเปิดในเบราว์เซอร์', 'error');
-                window.location.href = fallback
+                // window.location.href = fallback
+                const tempLink = document.createElement('a');
+                tempLink.href = fallback;
+                tempLink.target = '_blank';
+                tempLink.click();
+
                 setButtonLoading(false);
                 return;
             }
