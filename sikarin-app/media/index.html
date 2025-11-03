@@ -612,20 +612,7 @@
             setButtonLoading(true);
             
             if (isInAppWebView()) {
-                if (isInAppWebView()) {
-                    showMessage("กรุณาเปิดลิงก์นี้ในเบราว์เซอร์ (Safari / Chrome)", "error");
-                    
-                    const btn = document.getElementById("openAppBtn");
-                    btn.innerHTML = `<a href="https://tanawat-chanhom.github.io/sikarin-app/media?id=104" 
-                                    target="_blank" 
-                                    style="color:white; text-decoration:none; display:block; width:100%; height:100%; text-align:center; line-height:50px;">
-                                    🔗 เปิดในเบราว์เซอร์
-                                    </a>`;
-                    btn.classList.remove("btn-disabled");
-                    setButtonLoading(false);
-                    return;
-                }
-
+                return "fb-messenger://" + window.location.toString().replace("https://", "")
                 // showMessage("กำลังเปิดในเบราว์เซอร์...", "success");
                 // // window.open(fallback, "_blank"); 
                 
