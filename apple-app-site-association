@@ -10,7 +10,9 @@
           "URFVJ42BU2.com.fourgle.community.dev",
           "URFVJ42BU2.com.fourgle.community.qa",
           "2B8226XK55.com.fourgle.community.dev",
-          "2B8226XK55.com.fourgle.community.qa"
+          "2B8226XK55.com.fourgle.community.qa",
+          "G64YQMBMUA.com.sikarin.dmma.staging",
+          "G64YQMBMUA.com.sikarin.dmma.uat"
         ],
         "components": [
           {
