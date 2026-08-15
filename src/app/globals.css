@@ -103,6 +103,25 @@
 }
 
 /*
+ * Drives the ProfileCard sheen. Lives here rather than being injected into
+ * document.head from module scope, which is what the upstream component does.
+ */
+@keyframes pc-sheen {
+  0% {
+    background-position:
+      0 var(--background-y),
+      0 0,
+      center;
+  }
+  100% {
+    background-position:
+      0 var(--background-y),
+      90% 90%,
+      center;
+  }
+}
+
+/*
  * Respect reduced-motion globally. Individual components still opt out of
  * transforms specifically, but this covers anything missed.
  */
