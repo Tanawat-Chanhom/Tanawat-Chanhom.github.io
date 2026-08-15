@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import type { ProjectEntry } from '@/lib/content';
 import { localePath, type Locale } from '@/i18n/config';
+import { PixelCanvas } from './PixelCanvas';
 import { cn } from '@/lib/cn';
 
 type ProjectListItemProps = {
@@ -19,8 +20,11 @@ type ProjectListItemProps = {
  * The whole row is a single <a> — no nested interactive elements — so keyboard
  * users get exactly one stop per project and the accessible name is the title.
  *
- * The hover thumbnail is pure CSS (group-hover). No JS, no state, no
- * client component, which is what keeps this page at zero runtime JS.
+ * Two layers respond to hover:
+ *  - the thumbnail reveal, which is pure CSS (group-hover), and
+ *  - the pixel dissolve, which needs a canvas and is the one client component
+ *    on the page. It binds to this link's own hover/focus rather than wrapping
+ *    it, so it adds no tab stop.
  */
 export function ProjectListItem({ project, locale, viewLabel, className }: ProjectListItemProps) {
   const href = localePath(`/projects/${project.slug}`, locale);
@@ -32,8 +36,13 @@ export function ProjectListItem({ project, locale, viewLabel, className }: Proje
         className={cn(
           'group relative flex items-center gap-4 px-2 py-7 md:gap-8 md:px-4 md:py-10',
           'hover:bg-raised transition-colors duration-300',
+          // `isolate` keeps the canvas's negative z-index scoped to this row —
+          // without a stacking context it would paint behind the page itself.
+          'isolate',
         )}
       >
+        <PixelCanvas />
+
         {/* Category — fixed width so titles align down the column */}
         <span className="text-label text-dim w-20 shrink-0 md:w-40" aria-hidden="true">
           {project.category}

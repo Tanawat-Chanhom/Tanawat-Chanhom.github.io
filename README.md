@@ -10,7 +10,12 @@ Every page is prerendered to plain HTML at build time — there is no server in 
 
 ## Quick start
 
-Requires **Node ≥ 20.9** (Next 16's floor) and **pnpm 10**.
+Requires **Node ≥ 22.12** and **pnpm 10**.
+
+> Next itself only needs 20.9, but Storybook's `oxc-parser` ships its native binding as
+> an optional dependency gated on `node ^20.19 || >=22.12`. Install on an older Node and
+> pnpm **silently skips it** — `pnpm build` still works, while `pnpm storybook` dies with
+> `Cannot find module './parser.darwin-universal.node'`. Run `nvm use` before installing.
 
 ```bash
 nvm use            # picks up .nvmrc -> Node 22
@@ -122,17 +127,20 @@ added later with one registry entry plus a `content/blog/<locale>/` directory.
 is gated behind `@media (hover: hover) and (pointer: fine)` so it cannot get stuck
 visible on a touch device, and it drops the slide under `prefers-reduced-motion`.
 
+**The pixel dissolve is the only client component.** `PixelCanvas` is adapted from
+React Bits' PixelCard (MIT). It renders a bare decorative canvas rather than the
+original's focusable wrapper — that wrapper would have added a second tab stop inside
+every project link. It binds to its parent's hover and focus instead, builds its pixel
+grid on first interaction rather than on mount (six rows eagerly gridded is tens of
+thousands of objects), and skips hover binding entirely without a fine pointer. It
+costs about 1KB gzipped and measured no change in Lighthouse scores.
+
 ---
 
 ## Deployment
 
 Pushing to `main` triggers `.github/workflows/deploy.yml`, which lints, typechecks,
 builds, and publishes `out/` to GitHub Pages.
-
-### One-time setup
-
-In the repo: **Settings → Pages → Source → "GitHub Actions"**.
-Without this the workflow succeeds but nothing is published.
 
 ### Notes
 
