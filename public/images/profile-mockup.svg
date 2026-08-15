@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 585" width="420" height="585" role="img" aria-label="Placeholder portrait">
+  <defs>
+    <linearGradient id="figure" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a6a65"/>
+      <stop offset="60%" stop-color="#3c3c38"/>
+      <stop offset="100%" stop-color="#232320"/>
+    </linearGradient>
+    <linearGradient id="fadeTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a" stop-opacity="1"/>
+      <stop offset="38%" stop-color="#0a0a0a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- shoulders -->
+  <path d="M40 585 C40 435 130 380 210 380 C290 380 380 435 380 585 Z" fill="url(#figure)"/>
+  <!-- neck -->
+  <rect x="182" y="335" width="56" height="70" rx="26" fill="#4a4a45"/>
+  <!-- head -->
+  <ellipse cx="210" cy="285" rx="74" ry="88" fill="url(#figure)"/>
+  <!-- hair mass -->
+  <path d="M136 267 C136 185 284 185 284 267 C284 229 136 229 136 267 Z" fill="#57574f"/>
+
+  <!-- fade the top edge into the card so the crop reads intentionally -->
+  <rect width="420" height="585" fill="url(#fadeTop)"/>
+
+  <!-- Sits above the card's footer plate, which covers roughly the lower 105
+       units of this viewBox. Keeps the placeholder obviously a placeholder. -->
+  <text x="210" y="453" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" letter-spacing="4" fill="#8a8a86">MOCKUP</text>
+</svg>
