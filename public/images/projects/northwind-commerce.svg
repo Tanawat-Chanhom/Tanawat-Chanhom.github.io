@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="NORTHWIND placeholder artwork">
+  <rect width="480" height="320" fill="#141412"/>
+  <rect x="1" y="1" width="478" height="318" fill="none" stroke="#262624" stroke-width="2"/>
+  <rect x="60" y="60" width="104" height="52" rx="4" fill="#41413d"/><rect x="184" y="60" width="104" height="52" rx="4" fill="#333330"/><rect x="308" y="60" width="104" height="52" rx="4" fill="#41413d"/><rect x="60" y="132" width="104" height="52" rx="4" fill="#333330"/><rect x="184" y="132" width="104" height="52" rx="4" fill="#41413d"/><rect x="308" y="132" width="104" height="52" rx="4" fill="#333330"/><rect x="60" y="204" width="104" height="52" rx="4" fill="#41413d"/><rect x="184" y="204" width="104" height="52" rx="4" fill="#333330"/><rect x="308" y="204" width="104" height="52" rx="4" fill="#41413d"/>
+  <text x="24" y="298" font-family="ui-monospace, monospace" font-size="15" letter-spacing="2.5" fill="#8a8a86">NORTHWIND</text>
+  <text x="456" y="298" text-anchor="end" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#4a4a45">PLACEHOLDER</text>
+</svg>

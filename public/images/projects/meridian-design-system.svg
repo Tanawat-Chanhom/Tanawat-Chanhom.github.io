@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="MERIDIAN placeholder artwork">
+  <rect width="480" height="320" fill="#141412"/>
+  <rect x="1" y="1" width="478" height="318" fill="none" stroke="#262624" stroke-width="2"/>
+  <rect x="44" y="110" width="54" height="100" rx="3" fill="#1c1c1a"/><rect x="110" y="110" width="54" height="100" rx="3" fill="#2a2a27"/><rect x="176" y="110" width="54" height="100" rx="3" fill="#383835"/><rect x="242" y="110" width="54" height="100" rx="3" fill="#464642"/><rect x="308" y="110" width="54" height="100" rx="3" fill="#54544f"/><rect x="374" y="110" width="54" height="100" rx="3" fill="#62625c"/>
+  <text x="24" y="298" font-family="ui-monospace, monospace" font-size="15" letter-spacing="2.5" fill="#8a8a86">MERIDIAN</text>
+  <text x="456" y="298" text-anchor="end" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#4a4a45">PLACEHOLDER</text>
+</svg>

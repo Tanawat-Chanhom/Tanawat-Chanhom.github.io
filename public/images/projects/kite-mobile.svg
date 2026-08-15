@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="KITE placeholder artwork">
+  <rect width="480" height="320" fill="#141412"/>
+  <rect x="1" y="1" width="478" height="318" fill="none" stroke="#262624" stroke-width="2"/>
+  <rect x="185" y="50" width="110" height="220" rx="16" fill="#2b2b28" stroke="#4a4a45" stroke-width="2"/>
+        <rect x="200" y="78" width="80" height="8" rx="4" fill="#4a4a45"/>
+        <rect x="200" y="102" width="80" height="8" rx="4" fill="#3c3c38"/><rect x="200" y="128" width="56" height="8" rx="4" fill="#3c3c38"/><rect x="200" y="154" width="80" height="8" rx="4" fill="#3c3c38"/><rect x="200" y="180" width="56" height="8" rx="4" fill="#3c3c38"/><rect x="200" y="206" width="80" height="8" rx="4" fill="#3c3c38"/>
+  <text x="24" y="298" font-family="ui-monospace, monospace" font-size="15" letter-spacing="2.5" fill="#8a8a86">KITE</text>
+  <text x="456" y="298" text-anchor="end" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#4a4a45">PLACEHOLDER</text>
+</svg>

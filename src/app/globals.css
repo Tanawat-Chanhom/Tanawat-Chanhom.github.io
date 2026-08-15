@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+/*
+ * Design tokens. Tailwind v4 is CSS-first, so this @theme block *is* the
+ * config — there is no tailwind.config.js. Every key here also becomes a
+ * utility (e.g. --color-rule -> border-rule, text-rule, bg-rule).
+ */
+@theme {
+  /* Palette — dark only, by design. No light theme, no toggle. */
+  --color-bg: #0a0a0a;
+  --color-raised: #111111;
+  --color-fg: #f2f2f0;
+  --color-dim: #8a8a86; /* 5.72:1 on --color-bg — passes WCAG AA */
+  --color-rule: #262624;
+
+  /*
+   * Font stacks.
+   *
+   * IMPORTANT: --font-anuphan MUST keep its `, sans-serif` fallback. It is
+   * only defined on Thai pages (the (th) root layout loads it); on English
+   * pages the variable is undefined, and a bare var() with no fallback makes
+   * the whole font-family declaration invalid at computed-value time — which
+   * silently drops *all* typography on every English page.
+   *
+   * Ordering handles mixed-script text for free: Archivo renders Latin, and
+   * the browser falls through to Anuphan only for Thai glyphs Archivo lacks.
+   */
+  --font-display:
+    var(--font-archivo, sans-serif), var(--font-anuphan, sans-serif), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono:
+    var(--font-jetbrains-mono, monospace), var(--font-anuphan, sans-serif), ui-monospace, monospace;
+
+  /* Fluid display sizes — the typographic scale the whole design leans on. */
+  --text-display-sm: clamp(2rem, 6vw, 3.5rem);
+  --text-display-md: clamp(2.75rem, 9vw, 6rem);
+  --text-display-lg: clamp(3.25rem, 13vw, 9.5rem);
+
+  /* Section rhythm */
+  --spacing-section: clamp(5rem, 12vw, 9rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Header is fixed; keep anchor targets from hiding underneath it. */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /*
+   * Dark theme needs an explicitly bright focus ring — the browser default is
+   * near-invisible on #0a0a0a. :focus-visible keeps it off mouse clicks.
+   */
+  :focus-visible {
+    outline: 2px solid var(--color-fg);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
+  }
+
+  /* Tell the browser the page is dark so form controls/scrollbars match. */
+  :root {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  /*
+   * Big display type needs negative tracking and tight leading to read as a
+   * deliberate typographic statement rather than just "large text".
+   */
+  .text-display {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+
+  /* Small mono labels: eyebrows, categories, years, nav. */
+  .text-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+}
+
+/*
+ * Respect reduced-motion globally. Individual components still opt out of
+ * transforms specifically, but this covers anything missed.
+ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

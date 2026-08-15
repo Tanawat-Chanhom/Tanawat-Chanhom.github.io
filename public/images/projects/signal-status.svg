@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="SIGNAL placeholder artwork">
+  <rect width="480" height="320" fill="#141412"/>
+  <rect x="1" y="1" width="478" height="318" fill="none" stroke="#262624" stroke-width="2"/>
+  <polyline points="40,160 130,160 150,110 175,215 200,160 300,160 320,128 345,192 366,160 440,160" fill="none" stroke="#6e6e69" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="440" cy="160" r="7" fill="#8a8a86"/>
+  <text x="24" y="298" font-family="ui-monospace, monospace" font-size="15" letter-spacing="2.5" fill="#8a8a86">SIGNAL</text>
+  <text x="456" y="298" text-anchor="end" font-family="ui-monospace, monospace" font-size="12" letter-spacing="1.5" fill="#4a4a45">PLACEHOLDER</text>
+</svg>

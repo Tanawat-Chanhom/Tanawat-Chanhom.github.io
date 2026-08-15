@@ -1,0 +1,15 @@
+/*
+ * next/font runs as part of the Next build, so its generated CSS variables do
+ * not exist inside Storybook. Point the same token names at web-safe stacks so
+ * components render with correct *structure* here; exact typeface rendering is
+ * verified in the real app.
+ */
+:root {
+  --font-archivo: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-jetbrains-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-anuphan: 'Anuphan', 'Noto Sans Thai', sans-serif;
+}
+
+body {
+  background-color: var(--color-bg);
+}
