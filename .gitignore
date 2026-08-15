@@ -17,9 +17,13 @@ dist/
 # misc
 .DS_Store
 *.pem
+# Share the editor config that describes how to run this project;
+# ignore only per-machine state VS Code drops in here.
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
 
 # debug logs
 npm-debug.log*

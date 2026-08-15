@@ -1,0 +1,124 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Dev server",
+      "detail": "next dev — http://localhost:3000",
+      "type": "shell",
+      "command": "pnpm dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "next",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(Starting|Compiling|Running next).*",
+          "endsPattern": ".*(Ready in|Compiled).*"
+        }
+      },
+      "presentation": {
+        "group": "servers",
+        "panel": "dedicated",
+        "reveal": "always"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Storybook",
+      "detail": "Component workshop — http://localhost:6006",
+      "type": "shell",
+      "command": "pnpm storybook",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "storybook",
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*(Storybook).*",
+          "endsPattern": ".*(started|Local:).*"
+        }
+      },
+      "presentation": {
+        "group": "servers",
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Build",
+      "detail": "Static export to out/",
+      "type": "shell",
+      "command": "pnpm build",
+      "problemMatcher": ["$tsc"],
+      "presentation": { "panel": "dedicated", "reveal": "always" }
+    },
+    {
+      "label": "Serve static build",
+      "detail": "Serve out/ on :3000 — builds first. Use THIS for Lighthouse, not the dev server",
+      "type": "shell",
+      "command": "pnpm exec serve out -p 3000",
+      "dependsOn": ["Build"],
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "serve",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": ".*(Accepting connections|Local:).*"
+        }
+      },
+      "presentation": {
+        "group": "servers",
+        "panel": "dedicated",
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Lint",
+      "type": "shell",
+      "command": "pnpm lint",
+      "problemMatcher": ["$eslint-stylish"],
+      "presentation": { "panel": "shared", "reveal": "always" }
+    },
+    {
+      "label": "Typecheck",
+      "type": "shell",
+      "command": "pnpm typecheck",
+      "problemMatcher": ["$tsc"],
+      "presentation": { "panel": "shared", "reveal": "always" }
+    },
+    {
+      "label": "Format",
+      "detail": "Prettier --write across the repo",
+      "type": "shell",
+      "command": "pnpm format",
+      "problemMatcher": [],
+      "presentation": { "panel": "shared", "reveal": "always" }
+    },
+    {
+      "label": "Check all",
+      "detail": "Everything CI runs: lint + typecheck + build. Run before pushing",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Lint", "Typecheck", "Build"],
+      "problemMatcher": [],
+      "group": { "kind": "test", "isDefault": true },
+      "presentation": { "panel": "shared", "reveal": "always" }
+    },
+    {
+      "label": "Find TODO placeholders",
+      "detail": "Lists every placeholder still waiting for real content",
+      "type": "shell",
+      "command": "grep -rn 'TODO' src content --include='*.ts' --include='*.tsx' --include='*.md' || echo 'No TODOs left.'",
+      "problemMatcher": [],
+      "presentation": { "panel": "shared", "reveal": "always" }
+    }
+  ]
+}

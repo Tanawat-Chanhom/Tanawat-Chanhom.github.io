@@ -1,0 +1,64 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      // Breakpoints in Server Components, the content loader, and zod schemas.
+      // Almost everything in this project is server-side, so start here.
+      "name": "Dev: debug server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      }
+    },
+    {
+      // Attaches to the browser only. Useful for CSS/layout work — the hover
+      // reveal, focus rings, reduced-motion — none of which involve JS.
+      "name": "Dev: debug browser",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Dev: debug full stack",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm dev",
+      "cwd": "${workspaceFolder}",
+      "serverReadyAction": {
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s",
+        "action": "startDebugging",
+        "name": "Dev: debug browser"
+      }
+    },
+    {
+      // Steps through the static export itself: generateStaticParams, the
+      // markdown pipeline, and frontmatter validation failures.
+      "name": "Debug production build",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm build",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Debug Storybook",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "pnpm storybook",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Dev: server + browser",
+      "configurations": ["Dev: debug server", "Dev: debug browser"],
+      "stopAll": true
+    }
+  ]
+}

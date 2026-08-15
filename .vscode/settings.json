@@ -1,0 +1,27 @@
+{
+  // Tailwind v4 is CSS-first: globals.css uses @theme, @plugin and @utility,
+  // which the built-in CSS language service does not know and would underline
+  // as errors on every open.
+  "css.lint.unknownAtRules": "ignore",
+
+  // Tailwind IntelliSense needs to know where the theme lives now that there
+  // is no tailwind.config.js.
+  "tailwindCSS.experimental.configFile": "src/app/globals.css",
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Use the TypeScript version pinned in package.json, not VS Code's bundled one.
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/out": true,
+    "**/storybook-static": true,
+    "**/pnpm-lock.yaml": true
+  }
+}
