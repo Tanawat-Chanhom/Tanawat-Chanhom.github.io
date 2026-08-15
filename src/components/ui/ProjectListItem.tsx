@@ -1,8 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import type { ProjectEntry } from '@/lib/content';
 import { localePath, type Locale } from '@/i18n/config';
+import { HoverPreview } from './HoverPreview';
 import { PixelCanvas } from './PixelCanvas';
 import { cn } from '@/lib/cn';
 
@@ -20,11 +20,10 @@ type ProjectListItemProps = {
  * The whole row is a single <a> — no nested interactive elements — so keyboard
  * users get exactly one stop per project and the accessible name is the title.
  *
- * Two layers respond to hover:
- *  - the thumbnail reveal, which is pure CSS (group-hover), and
- *  - the pixel dissolve, which needs a canvas and is the one client component
- *    on the page. It binds to this link's own hover/focus rather than wrapping
- *    it, so it adds no tab stop.
+ * Two layers respond to hover — the pixel dissolve behind the type, and the
+ * cursor-following image preview above it. Both are client components that
+ * bind to this link's own pointer events rather than wrapping it, so neither
+ * adds a tab stop, and both no-op on devices without a fine pointer.
  */
 export function ProjectListItem({ project, locale, viewLabel, className }: ProjectListItemProps) {
   const href = localePath(`/projects/${project.slug}`, locale);
@@ -58,34 +57,11 @@ export function ProjectListItem({ project, locale, viewLabel, className }: Proje
         </h3>
 
         {/*
-          Hover preview. Hidden from assistive tech: it is decorative, and the
-          link already carries the project's name. Only shown on devices that
-          truly support hover, so it can never get stuck visible on touch.
+          Hover preview. Decorative and hidden from assistive tech — the link
+          already carries the project's name — and only ever shown on devices
+          with a real pointer to follow.
         */}
-        {project.cover ? (
-          <span
-            aria-hidden="true"
-            className={cn(
-              'pointer-events-none absolute top-1/2 right-24 hidden -translate-y-1/2',
-              'z-10 w-56 overflow-hidden rounded-sm opacity-0',
-              'translate-x-6 transition-[opacity,transform] duration-500 ease-out',
-              'group-hover:translate-x-0 group-hover:opacity-100',
-              'motion-reduce:translate-x-0 motion-reduce:transition-opacity',
-              // Underscores become spaces — without them this emits invalid CSS.
-              '[@media(hover:hover)_and_(pointer:fine)]:block',
-            )}
-          >
-            <Image
-              src={project.cover}
-              alt=""
-              width={480}
-              height={320}
-              loading="lazy"
-              sizes="224px"
-              className="h-auto w-full grayscale"
-            />
-          </span>
-        ) : null}
+        {project.cover ? <HoverPreview src={project.cover} width={480} height={320} /> : null}
 
         {/* Year */}
         <span className="text-label text-dim shrink-0 tabular-nums" aria-hidden="true">
