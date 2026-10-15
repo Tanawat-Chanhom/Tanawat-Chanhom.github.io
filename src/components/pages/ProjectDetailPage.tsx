@@ -98,7 +98,7 @@ export async function ProjectDetailPage({ locale, slug }: { locale: Locale; slug
               />
             ) : null}
 
-            <div className="mt-12 max-w-3xl">
+            <div className="mt-12">
               <Prose html={project.body} />
             </div>
 
