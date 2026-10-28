@@ -70,6 +70,7 @@ export const en = {
   },
   footer: {
     builtWith: 'Built with Next.js and Tailwind CSS.',
+    craftedWith: 'Crafted with Claude.',
     rights: 'All rights reserved.',
     backToTop: 'Back to top',
   },

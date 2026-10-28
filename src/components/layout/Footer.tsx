@@ -17,6 +17,7 @@ export function Footer({ locale }: { locale: Locale }) {
               © {year} {site.name}. {t.footer.rights}
             </p>
             <p className="text-label text-dim">{t.footer.builtWith}</p>
+            <p className="text-label text-dim">{t.footer.craftedWith}</p>
           </div>
 
           <div className="flex items-center gap-6">

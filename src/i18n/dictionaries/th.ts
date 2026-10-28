@@ -71,6 +71,7 @@ export const th: Dictionary = {
   },
   footer: {
     builtWith: 'สร้างด้วย Next.js และ Tailwind CSS',
+    craftedWith: 'สร้างสรรค์ร่วมกับ Claude',
     rights: 'สงวนลิขสิทธิ์',
     backToTop: 'กลับขึ้นด้านบน',
   },
