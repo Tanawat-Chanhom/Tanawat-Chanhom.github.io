@@ -63,6 +63,12 @@ export const th: Dictionary = {
     eyebrow: 'การศึกษา',
     heading: 'ประวัติการศึกษา',
   },
+  articles: {
+    eyebrow: 'งานเขียน',
+    heading: 'บทความ',
+    readOnMedium: 'อ่านต่อบน Medium',
+    writtenIn: { en: 'เขียนเป็นภาษาอังกฤษ', th: 'เขียนเป็นภาษาไทย' },
+  },
   contact: {
     eyebrow: 'ติดต่อ',
     heading: 'คุยกันได้',

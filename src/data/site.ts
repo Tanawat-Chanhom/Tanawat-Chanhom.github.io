@@ -165,3 +165,41 @@ export const education: ExperienceItem[] = [
     org: 'Saipanya Rangsit School',
   },
 ];
+
+export type Article = {
+  title: Record<Locale, string>;
+  /** `YYYY-MM-DD`. Used for <time datetime>; the year is what shows. */
+  date: string;
+  /** The post's opening lines, shown as a teaser before linking out. */
+  excerpt: Record<Locale, string>;
+  href: string;
+  /** Language the post itself is written in — sets hreflang and the language note. */
+  lang: Locale;
+};
+
+/**
+ * Posts published on Medium. The Thai excerpts are the posts' own opening
+ * paragraphs; the English ones are translations. Newest first.
+ */
+export const articles: Article[] = [
+  {
+    title: { en: 'React for complete beginners', th: 'React สำหรับคนที่ไม่รู้อะไรเลย' },
+    date: '2020-05-03',
+    excerpt: {
+      en: "Hi! Today I'll introduce you to the React library and what makes it cool. Not too deep, just enough to get a rough idea. It was created at Facebook, so just knowing where it comes from probably makes you want to get to know it already, right? Haha (or maybe that's just me).",
+      th: 'สวัสดีครับ ก็วันนี้ผมก็จะพาทุกคนไปรู้จักกับ React Library ว่ามันมีอะไรเจ๋งๆ แต่ไม่ได้ลงลึกมากนะ แค่ให้รู้คร่าวๆพอ โดยที่ทางผู้ที่สร้างนั้นมาจาก Facebook เลยนะ แค่รู้ที่มาของมัน ก็อยากที่จะทำความรู้จักกับมันแล้วละสินะครับ 5555 (คิดไปเองคนเดียว)',
+    },
+    href: 'https://medium.com/@tanawatchanhom27/react-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%84%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%E0%B9%80%E0%B8%A5%E0%B8%A2-456770106538',
+    lang: 'th',
+  },
+  {
+    title: { en: 'Web Development', th: 'Web Development' },
+    date: '2020-05-03',
+    excerpt: {
+      en: "Hi! Today I'll introduce you to web development: what it is, the career paths within it, and the technologies and concepts behind it. This article is for people just starting out who want to become web developers, a guide to help you find the path that suits you.",
+      th: 'สวัสดีครับ วันนี้ผมก็จะพาทุกคนไปรู้จักกับ Web Development ว่ามันคืออะไร มันมีสายไหนบ้าง Technology ที่เกี่ยวข้อง Concepts ต่างๆ ที่จะทำให้ทุกคนนั้นเข้าใจมากขึ้น บทความนี้เหมาะสมกับใคร เหมาะสมกับคนที่เพิ่งเริ่มที่อยากจะเป็น Web Developer นะครับ เพื่อไกด์ไลน์ให้ทุกคนหาเส้นทางที่เหมาะกับตัวเองได้ ว่าเราจะไปทางไหนดี',
+    },
+    href: 'https://medium.com/@tanawatchanhom27/web-development-34594f93a0b5',
+    lang: 'th',
+  },
+];

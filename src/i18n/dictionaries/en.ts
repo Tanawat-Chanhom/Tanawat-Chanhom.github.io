@@ -62,6 +62,12 @@ export const en = {
     eyebrow: 'Education',
     heading: 'Where I studied',
   },
+  articles: {
+    eyebrow: 'Writing',
+    heading: 'Articles',
+    readOnMedium: 'Read on Medium',
+    writtenIn: { en: 'Written in English', th: 'Written in Thai' },
+  },
   contact: {
     eyebrow: 'Contact',
     heading: "Let's talk",

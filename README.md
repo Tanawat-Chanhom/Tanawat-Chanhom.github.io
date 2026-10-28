@@ -95,6 +95,13 @@ pnpm dev           # http://localhost:3000
 Frontmatter is validated with zod at build time. A typo fails the build with the
 offending file and field named, rather than silently publishing an empty row.
 
+## Adding an article
+
+Articles live on Medium; the site only shows a teaser and links out. Add an entry
+to `articles` in `src/data/site.ts` with the title, date, the post's opening lines
+as the excerpt (in both locales), the Medium URL, and the language the post is
+written in. When that language differs from the page, the row says so.
+
 ---
 
 ## Architecture notes
@@ -161,10 +168,11 @@ src/app/(en)/               English routes  ->  /
 src/app/(th)/               Thai routes     ->  /th
 src/components/
   layout/                   Header, Footer, SiteShell, SkipLink, LocaleSwitch
-  sections/                 Hero, About, Skills, Projects, Experience, Education, Contact
+  sections/                 Hero, About, Skills, Projects, Experience, Education,
+                            Articles, Contact
   ui/                       Reusable primitives + their stories
   pages/                    HomePage, ProjectDetailPage — shared by both locales
-src/data/site.ts            Name, email, socials, skills, experience, education
+src/data/site.ts            Name, email, socials, skills, experience, education, articles
 src/i18n/                   Locale config + dictionaries
 src/lib/                    content, schema, markdown, metadata helpers
 ```
