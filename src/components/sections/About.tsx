@@ -26,7 +26,7 @@ export function About({ locale }: { locale: Locale }) {
         <div className="grid gap-12 md:grid-cols-12 md:items-center md:gap-16">
           <div className="mx-auto w-full max-w-[320px] md:col-span-5 md:mx-0">
             <ProfileCard
-              avatarUrl="/images/profile-mockup.svg"
+              avatarUrl="/images/profile.webp"
               name={site.name}
               title={t.hero.eyebrow}
               handle="Tanawat-Chanhom"
