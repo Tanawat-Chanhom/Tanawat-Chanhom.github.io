@@ -31,23 +31,21 @@ export const socialLinks: SocialLink[] = [
  * translated — only the section heading is.
  */
 export const skills: string[] = [
+  'Swift',
+  'Kotlin',
   'TypeScript',
-  'JavaScript',
   'Go',
-  'Python',
   'React',
   'Next.js',
-  'React Native',
-  'HTML & CSS',
-  'Material UI',
-  'Node.js',
-  'Express.js',
+  'Flutter',
+  'AntDesign',
+  'Tailwind',
   'MongoDB',
-  'Firebase',
-  'LINE API',
   'Docker',
   'Git',
-  'Adobe XD',
+  'Figma',
+  'Lighthouse',
+  'Playwright',
 ];
 
 export type ExperienceItem = {
