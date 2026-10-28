@@ -72,6 +72,20 @@ export type ExperienceItem = {
 /** Newest first. */
 export const experience: ExperienceItem[] = [
   {
+    start: '2022',
+    end: null,
+    role: { en: 'Full-stack Developer', th: 'นักพัฒนา Full-stack' },
+    org: 'Fellowie',
+    note: { en: 'Full-time', th: 'งานประจำ' },
+  },
+  {
+    start: '2021',
+    end: '2022',
+    role: { en: 'Front-end Developer', th: 'นักพัฒนา Front-end' },
+    org: 'Fellowie',
+    note: { en: 'Internship', th: 'ฝึกงาน' },
+  },
+  {
     start: '2021',
     end: '2021',
     role: { en: 'Competitor', th: 'ผู้เข้าแข่งขัน' },
