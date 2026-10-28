@@ -50,6 +50,7 @@ export const en = {
   projectDetail: {
     backToWork: 'Back to work',
     viewLive: 'View live',
+    viewSource: 'View source',
     overview: 'Overview',
     published: 'Published',
   },

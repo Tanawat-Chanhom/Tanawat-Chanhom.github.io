@@ -51,6 +51,7 @@ export const th: Dictionary = {
   projectDetail: {
     backToWork: 'กลับไปหน้าผลงาน',
     viewLive: 'ดูเว็บจริง',
+    viewSource: 'ดูซอร์สโค้ด',
     overview: 'ภาพรวม',
     published: 'เผยแพร่เมื่อ',
   },

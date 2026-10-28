@@ -19,6 +19,8 @@ export const projectFrontmatterSchema = z.object({
     .refine((value) => !Number.isNaN(Date.parse(value)), 'date must be a real calendar date'),
   /** Optional external URL — becomes the "View live" button on the detail page. */
   link: z.url('link must be a valid URL').optional(),
+  /** Optional repository URL — becomes the "View source" button on the detail page. */
+  source: z.url('source must be a valid URL').optional(),
   /** Optional thumbnail revealed on row hover. Path under /public. */
   cover: z.string().startsWith('/', 'cover must be an absolute path under /public').optional(),
   /** Alt text for the cover. Required whenever a cover is set (see refine below). */

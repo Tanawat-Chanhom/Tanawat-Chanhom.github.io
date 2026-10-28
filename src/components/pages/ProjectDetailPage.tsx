@@ -14,7 +14,8 @@ import { getDictionary, localePath, type Locale } from '@/i18n';
  * A single project case study, shared by both locales.
  *
  * Renders the markdown body that the list view only summarises, and turns the
- * optional `link` frontmatter field into a "View live" action.
+ * optional `link` and `source` frontmatter fields into "View live" and
+ * "View source" actions.
  */
 export async function ProjectDetailPage({ locale, slug }: { locale: Locale; slug: string }) {
   const project = await getEntry('projects', slug, locale);
@@ -63,26 +64,31 @@ export async function ProjectDetailPage({ locale, slug }: { locale: Locale; slug
                   </dd>
                 </div>
 
-                {project.link ? (
-                  <div className="flex items-center gap-3">
-                    <dt className="sr-only">{t.projectDetail.viewLive}</dt>
-                    <dd>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="text-label group hover:text-fg inline-flex items-center gap-2 underline underline-offset-4 transition-colors duration-200"
-                      >
-                        {t.projectDetail.viewLive}
-                        <ArrowUpRightIcon
-                          weight="bold"
-                          className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    </dd>
-                  </div>
-                ) : null}
+                {[
+                  { href: project.link, label: t.projectDetail.viewLive },
+                  { href: project.source, label: t.projectDetail.viewSource },
+                ].map(({ href, label }) =>
+                  href ? (
+                    <div key={label} className="flex items-center gap-3">
+                      <dt className="sr-only">{label}</dt>
+                      <dd>
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="text-label group hover:text-fg inline-flex items-center gap-2 underline underline-offset-4 transition-colors duration-200"
+                        >
+                          {label}
+                          <ArrowUpRightIcon
+                            weight="bold"
+                            className="size-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transform-none"
+                            aria-hidden="true"
+                          />
+                        </a>
+                      </dd>
+                    </div>
+                  ) : null,
+                )}
               </dl>
             </header>
 
