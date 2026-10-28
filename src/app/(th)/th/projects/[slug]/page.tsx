@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   return buildMetadata({
     locale: 'th',
     path: `/projects/${slug}`,
-    title: project ? `${project.title} — ธนวัฒน์ จันทร์หอม` : undefined,
+    title: project ? `${project.title} — ธนวัตน์ จันทร์หอม` : undefined,
     description: project?.description,
   });
 }

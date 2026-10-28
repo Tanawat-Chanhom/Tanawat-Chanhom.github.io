@@ -22,7 +22,7 @@ export function Experience({ locale }: { locale: Locale }) {
         <ul className="border-rule border-b">
           {experience.map((item) => (
             <ExperienceRow
-              key={`${item.company}-${item.start}`}
+              key={`${item.org}-${item.start}`}
               item={item}
               locale={locale}
               presentLabel={t.experience.present}

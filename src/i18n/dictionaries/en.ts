@@ -31,8 +31,8 @@ export const en = {
   },
   about: {
     eyebrow: 'About',
-    statement: 'I build fast, accessible web interfaces that get out of the way.',
-    body: 'Frontend-focused engineer with a bias for shipping. I care about performance budgets, semantic markup, and design systems that survive contact with a real team. Most of my work lives at the seam between design and engineering.',
+    statement: 'I build web software end to end, from the API to the interface.',
+    body: 'I studied Information Technology at KMITL, majoring in software engineering, and I have worked on both sides of the stack. As an intern at Lattesoft I wrote APIs and designed databases for client back offices. At hackathons I built a real-time logistics dashboard that took second runner-up at CPF Hackathon 2020, and LINE LIFF apps that reached the final 20 at LINE Hackathon 2020. Lately I have been building git-khong-song, a self-hosted git forge in Go and Next.js.',
   },
   skills: {
     eyebrow: 'Skills',
@@ -55,8 +55,12 @@ export const en = {
   },
   experience: {
     eyebrow: 'Experience',
-    heading: 'Where I have worked',
+    heading: 'Work & activities',
     present: 'Present',
+  },
+  education: {
+    eyebrow: 'Education',
+    heading: 'Where I studied',
   },
   contact: {
     eyebrow: 'Contact',

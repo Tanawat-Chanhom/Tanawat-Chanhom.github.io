@@ -5,6 +5,7 @@ import { About } from '@/components/sections/About';
 import { Skills } from '@/components/sections/Skills';
 import { Projects } from '@/components/sections/Projects';
 import { Experience } from '@/components/sections/Experience';
+import { Education } from '@/components/sections/Education';
 import { Contact } from '@/components/sections/Contact';
 import { getCollection } from '@/lib/content';
 import type { Locale } from '@/i18n';
@@ -28,6 +29,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
         <About locale={locale} />
         <Skills locale={locale} />
         <Experience locale={locale} />
+        <Education locale={locale} />
         <Contact locale={locale} />
       </main>
       <Footer locale={locale} />

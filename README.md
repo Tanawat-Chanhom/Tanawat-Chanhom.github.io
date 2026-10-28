@@ -161,10 +161,10 @@ src/app/(en)/               English routes  ->  /
 src/app/(th)/               Thai routes     ->  /th
 src/components/
   layout/                   Header, Footer, SiteShell, SkipLink, LocaleSwitch
-  sections/                 Hero, About, Skills, Projects, Experience, Contact
+  sections/                 Hero, About, Skills, Projects, Experience, Education, Contact
   ui/                       Reusable primitives + their stories
   pages/                    HomePage, ProjectDetailPage — shared by both locales
-src/data/site.ts            Name, email, socials, skills, experience
+src/data/site.ts            Name, email, socials, skills, experience, education
 src/i18n/                   Locale config + dictionaries
 src/lib/                    content, schema, markdown, metadata helpers
 ```
@@ -176,5 +176,5 @@ src/lib/                    content, schema, markdown, metadata helpers
 The site currently ships placeholder content so the structure is visible. Search for
 `TODO` to find everything that needs replacing:
 
-- `src/data/site.ts` — name, experience entries, and the empty LinkedIn URL
-- `src/i18n/dictionaries/{en,th}.ts` — hero, about, and contact copy
+- `src/data/site.ts` — the empty LinkedIn URL
+- `src/i18n/dictionaries/{en,th}.ts` — hero and contact copy

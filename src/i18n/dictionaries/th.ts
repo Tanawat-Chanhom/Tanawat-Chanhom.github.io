@@ -6,9 +6,9 @@ import type { Dictionary } from './en';
  */
 export const th: Dictionary = {
   meta: {
-    title: 'ธนวัฒน์ จันทร์หอม — Software Engineer',
+    title: 'ธนวัตน์ จันทร์หอม — Software Engineer',
     description:
-      'ผลงานของธนวัฒน์ จันทร์หอม วิศวกรซอฟต์แวร์ผู้สร้างเว็บอินเทอร์เฟซที่เร็วและเข้าถึงได้',
+      'ผลงานของธนวัตน์ จันทร์หอม วิศวกรซอฟต์แวร์ผู้สร้างเว็บอินเทอร์เฟซที่เร็วและเข้าถึงได้',
     projectsTitle: 'ผลงาน',
   },
   nav: {
@@ -32,8 +32,8 @@ export const th: Dictionary = {
   },
   about: {
     eyebrow: 'เกี่ยวกับ',
-    statement: 'ผมสร้างเว็บอินเทอร์เฟซที่เร็ว เข้าถึงได้ และไม่ขวางทางผู้ใช้',
-    body: 'วิศวกรสาย frontend ที่เน้นการส่งงานจริง ให้ความสำคัญกับ performance budget, semantic markup และ design system ที่ใช้งานได้จริงกับทีม งานส่วนใหญ่ของผมอยู่ตรงรอยต่อระหว่างงานออกแบบกับงานวิศวกรรม',
+    statement: 'ผมสร้างซอฟต์แวร์บนเว็บได้ครบทั้งระบบ ตั้งแต่ API จนถึงหน้าจอ',
+    body: 'ผมเรียนเทคโนโลยีสารสนเทศที่ สจล. เอกวิศวกรรมซอฟต์แวร์ และทำงานมาทั้งฝั่ง back-end และ front-end ตอนฝึกงานที่ Lattesoft ผมเขียน API และออกแบบฐานข้อมูลให้ระบบหลังบ้านของลูกค้า ส่วนในงานแฮกกาธอน ผมทำ dashboard ติดตามการขนส่งแบบ real-time ที่ได้รองชนะเลิศอันดับสองใน CPF Hackathon 2020 และแอป LINE LIFF ที่เข้ารอบ 20 ทีมสุดท้ายใน LINE Hackathon 2020 ช่วงนี้ผมกำลังสร้าง git-khong-song ซึ่งเป็น git forge แบบ self-hosted ที่เขียนด้วย Go และ Next.js',
   },
   skills: {
     eyebrow: 'ทักษะ',
@@ -56,8 +56,12 @@ export const th: Dictionary = {
   },
   experience: {
     eyebrow: 'ประสบการณ์',
-    heading: 'ประวัติการทำงาน',
+    heading: 'การทำงานและกิจกรรม',
     present: 'ปัจจุบัน',
+  },
+  education: {
+    eyebrow: 'การศึกษา',
+    heading: 'ประวัติการศึกษา',
   },
   contact: {
     eyebrow: 'ติดต่อ',
