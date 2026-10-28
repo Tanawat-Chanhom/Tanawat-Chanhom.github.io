@@ -88,6 +88,10 @@ export const experience: ExperienceItem[] = [
       en: 'Built the web pages, Flex Messages and LIFF apps for a LINE-based tool that makes everyday school life smoother for students and teachers.',
       th: 'สร้างหน้าเว็บ Flex Message และ LIFF สำหรับเครื่องมือบน LINE ที่ช่วยให้นักเรียนและครูใช้ LINE ในชีวิตประจำวันได้มีประสิทธิภาพมากขึ้น',
     },
+    link: {
+      href: 'https://techsauce.co/pr-news/line-thailand-winner-line-hack-2020',
+      label: { en: 'Read about the event (Thai)', th: 'อ่านข่าวของงานนี้' },
+    },
   },
   {
     start: '2020',
