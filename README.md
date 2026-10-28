@@ -72,7 +72,6 @@ pnpm dev           # http://localhost:3000
 3. _(Optional)_ Add `content/projects/th/<slug>.md` with the **same filename** for
    a Thai version. If you skip it, the Thai site falls back to the English file —
    the project still appears at `/th`, it is simply not translated yet.
-   (`signal-status` is intentionally left untranslated as a working example.)
 
 4. Drop the cover image in `public/images/projects/`.
 
@@ -157,7 +156,7 @@ builds, and publishes `out/` to GitHub Pages.
 
 ```
 content/projects/{en,th}/   Markdown — one file per project per locale
-public/images/projects/     Cover images (SVG placeholders for now)
+public/images/projects/     Cover images
 src/app/(en)/               English routes  ->  /
 src/app/(th)/               Thai routes     ->  /th
 src/components/
@@ -179,5 +178,3 @@ The site currently ships placeholder content so the structure is visible. Search
 
 - `src/data/site.ts` — name, experience entries, and the empty LinkedIn URL
 - `src/i18n/dictionaries/{en,th}.ts` — hero, about, and contact copy
-- `content/projects/**` — six invented projects
-- `public/images/projects/*.svg` — generated placeholder artwork

@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn';
 
 type LocaleSwitchProps = {
   currentLocale: Locale;
-  /** Path *within* the locale, e.g. "/" or "/projects/atlas-analytics". */
+  /** Path *within* the locale, e.g. "/" or "/projects/git-khong-song". */
   path?: string;
   /** Accessible name for the group of language links. */
   label: string;

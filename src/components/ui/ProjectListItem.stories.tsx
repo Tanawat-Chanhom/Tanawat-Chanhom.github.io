@@ -8,7 +8,7 @@ const baseProject: ProjectEntry = {
   category: 'WEB APP',
   date: '2026-05-12',
   link: 'https://example.com',
-  cover: '/images/projects/atlas-analytics.svg',
+  cover: '/images/projects/git-khong-song.webp',
   coverAlt: 'Atlas Analytics dashboard',
   draft: false,
   featured: true,
@@ -80,7 +80,7 @@ export const List: Story = {
           title: 'Northwind Commerce',
           category: 'E-COMMERCE',
           year: '2026',
-          cover: '/images/projects/northwind-commerce.svg',
+          cover: '/images/projects/git-khong-song.webp',
         }}
       />
       <ProjectListItem
@@ -91,7 +91,7 @@ export const List: Story = {
           title: 'Harbor Docs',
           category: 'PLATFORM',
           year: '2025',
-          cover: '/images/projects/harbor-docs.svg',
+          cover: '/images/projects/git-khong-song.webp',
         }}
       />
     </>

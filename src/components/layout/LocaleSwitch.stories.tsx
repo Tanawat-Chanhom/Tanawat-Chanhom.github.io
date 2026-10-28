@@ -19,5 +19,5 @@ export const OnThai: Story = {
 
 /** Deep link — switching language should stay on the same project. */
 export const DeepPath: Story = {
-  args: { path: '/projects/atlas-analytics' },
+  args: { path: '/projects/git-khong-song' },
 };

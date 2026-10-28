@@ -27,5 +27,5 @@ export const Thai: Story = {
 
 /** On a project page the language switch must preserve the current path. */
 export const OnProjectPage: Story = {
-  args: { path: '/projects/atlas-analytics' },
+  args: { path: '/projects/git-khong-song' },
 };
