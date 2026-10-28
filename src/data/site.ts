@@ -65,6 +65,8 @@ export type ExperienceItem = {
   note?: Record<Locale, string>;
   /** One or two sentences on what the work actually was. */
   summary?: Record<Locale, string>;
+  /** External write-up, demo, or repo. Opens in a new tab. */
+  link?: { href: string; label: Record<Locale, string> };
 };
 
 /** Newest first. */
@@ -103,6 +105,10 @@ export const experience: ExperienceItem[] = [
     summary: {
       en: 'Built a real-time dashboard for tracking and managing product shipments, so deliveries could be dispatched as efficiently as possible.',
       th: 'สร้างหน้าเว็บ dashboard แสดงข้อมูลการขนส่งสินค้าแบบ real-time เพื่อให้จัดการการส่งสินค้าได้อย่างมีประสิทธิภาพสูงสุด',
+    },
+    link: {
+      href: 'https://www.it.kmitl.ac.th/th/posts/%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B9%84%E0%B8%AD%E0%B8%97%E0%B8%B5%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A7%E0%B9%89%E0%B8%B2-2',
+      label: { en: 'Read the article (Thai)', th: 'อ่านบทความ' },
     },
   },
   {

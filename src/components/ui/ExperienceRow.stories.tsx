@@ -37,6 +37,11 @@ export const SingleYear: Story = {
   args: { item: experience[1]! },
 };
 
+/** External link under the summary, opening in a new tab. */
+export const WithLink: Story = {
+  args: { item: experience.find((item) => item.link)! },
+};
+
 /** No summary and no note — the row must stay aligned without them. */
 export const Minimal: Story = {
   args: { item: education[1]! },
